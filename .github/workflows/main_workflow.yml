@@ -1,5 +1,5 @@
 
-name: DotNetCore Desktop App
+name: DotNetCore Console Workflow
 
 on:
   push:
