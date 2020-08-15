@@ -11,6 +11,7 @@ There are 25 pairs of colors.
 A feature request arises for which an implementation needs to be added to the class.
 The color coding needs to be printed as a reference manual for the concerned telecom personnel.
 Provide a ToString() function in the code that would return the mapping which can be printed as a manual.
+Also resolve any coding guideline violations.
 
 ### Source code details:
  The implementation of this feature provides the above mentioned mapping between the pair number and the color pair. 
