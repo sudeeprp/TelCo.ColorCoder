@@ -1,5 +1,4 @@
-
-name: DotNetCore Desktop App
+name: Telco ColorCoder 
 
 on:
   push:
@@ -19,7 +18,7 @@ jobs:
 
     env:
       Solution_Name: TelCo.ColorCoder.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: your-test-project-path                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+#      Test_Project_Path: your-test-project-path                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
 
     steps:
     - name: Checkout
@@ -40,10 +39,9 @@ jobs:
     # Restore paages, MSBUild the app, run the app
     - name: Build the App
       shell: cmd
-      run: call build.bat
-    
-    # Check LOC
-    - name: Number of lines in file
+      run: call build.bat 
+
+    # Run the app
+    - name: Run the App
       shell: cmd
-      run: call loc.bat
-   
+      run: call run.bat 
