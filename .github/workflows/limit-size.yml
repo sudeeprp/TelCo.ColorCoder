@@ -1,0 +1,21 @@
+name: Check markdown files
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+  - name: Install lizard
+    run: pip install lizard
+
+  - name: Gather size
+    run: lizard > .github/workflows/sizes.txt
+
+  - name: Check size
+    run: .github/workflows/lpar.sh 50 .github/workflows/sizes.txt
