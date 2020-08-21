@@ -23,4 +23,4 @@ jobs:
         cat .github/workflows/sizes.txt
 
     - name: Check size
-      run: .github/workflows/lpar.sh 50 .github/workflows/sizes.txt
+      run: sudo .github/workflows/lpar.sh 50 .github/workflows/sizes.txt
