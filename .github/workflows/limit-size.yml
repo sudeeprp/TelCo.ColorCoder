@@ -17,7 +17,10 @@ jobs:
       run: pip install lizard
 
     - name: Gather size
-      run: lizard > .github/workflows/sizes.txt
+      run: |
+        echo $HOME
+        $HOME/.local/bin/lizard > .github/workflows/sizes.txt
+        cat .github/workflows/sizes.txt
 
     - name: Check size
       run: .github/workflows/lpar.sh 50 .github/workflows/sizes.txt
