@@ -1,5 +1,6 @@
 # Topic: Modularity
-## Execise1 : Code division into files
+
+## Divide into files
 
 ### Summary:
 The 25-pair color code, is used to identify wires in telecommunications cables.
