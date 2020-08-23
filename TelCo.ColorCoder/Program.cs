@@ -59,8 +59,9 @@ namespace TelCo.ColorCoder
             }
             
             // Find index of major and minor color from pair number
-            int majorIndex = pairNumber / majorSize;
-            int minorIndex = (pairNumber % minorSize) == 0 ? minorSize - 1 : (pairNumber % 5) - 1;
+            int zeroBasedPairNumber = pairNumber - 1;
+            int majorIndex = zeroBasedPairNumber / minorSize;
+            int minorIndex = zeroBasedPairNumber % minorSize;
 
             // Construct the return val from the arrays
             ColorPair pair = new ColorPair() { majorColor = colorMapMajor[majorIndex],
@@ -119,6 +120,12 @@ namespace TelCo.ColorCoder
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.White);
             Debug.Assert(testPair1.minorColor == Color.Brown);
+
+            pairNumber = 5;
+            testPair1 = Program.GetColorFromPairNumber(pairNumber);
+            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
+            Debug.Assert(testPair1.majorColor == Color.White);
+            Debug.Assert(testPair1.minorColor == Color.SlateGray);
 
             pairNumber = 23;
             testPair1 = Program.GetColorFromPairNumber(pairNumber);
