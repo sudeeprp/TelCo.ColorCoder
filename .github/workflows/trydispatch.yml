@@ -13,4 +13,7 @@ jobs:
 
     steps:
     - name: Say it
-      run: echo ${{ inputs.something }}
+      run: |
+        echo "${{ inputs.something }}"
+        date > self-hosted-output.txt
+        echo "${{ inputs.something }}" >> self-hosted-output.txt
