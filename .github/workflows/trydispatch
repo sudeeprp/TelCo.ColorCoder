@@ -1,0 +1,16 @@
+name: Try self hosted
+
+on:
+  workflow_dispatch:
+    inputs:
+      something:
+        description: 'Say something'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Say it
+      run: echo ${{ inputs.something }}
